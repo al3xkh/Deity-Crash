@@ -1,0 +1,234 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0; }
+
+
+
+.navbar {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 1rem 2rem; 
+    position: absolute; 
+    top: 0; 
+    width: 100%; 
+    z-index: 10; 
+    font-family: 'Atkinson Hyperlegible';
+    background-color: #634647;
+    
+}
+
+.body {
+    overflow-x: hidden;
+   
+    background-color: #fff4eb;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    gap: 2rem; 
+    color: #fff4eb;
+    text-decoration: none;
+  }
+
+
+.logo {
+    width: 20%;
+}
+
+a {
+    text-decoration: none; /* quita el subrayado */
+    color: #fff4eb; /* pone el texto blanco */
+    
+}
+
+.uwu{
+    width: 20%;
+    margin-top: 5%;
+}
+
+
+.logete {
+    display: flex;
+    justify-content: center; /* centra horizontalmente */
+    align-items: center;     /* centra verticalmente */
+    
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #fff4eb;
+    font-size: 1.2rem; /* aumentá el tamaño del texto */
+    transition: color 0.3s ease; /* suave transición de color */
+}
+
+.navbar a:hover {
+    color: #ffcc99; /* color clarito cuando pasás el mouse */
+    cursor: pointer;
+}
+
+.ingles{
+    margin-top: 100px;
+    font-family: 'Atkinson Hyperlegible';
+    color: #634647;
+    text-align: end;
+    margin-right: 30px;
+}
+
+.header{
+    font-family: 'Gentium Book';
+    margin-top: 20px;
+    margin-bottom: 20px;
+   
+    
+}
+
+.header, .parrafo{
+    text-align: center;
+    color: #634647;
+    
+    
+}
+
+.parrafo{
+    font-family: 'Atkinson Hyperlegible';
+    
+}
+
+
+
+
+
+
+
+
+.dial-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 30px;
+    font-family: 'Atkinson Hyperlegible';
+    border: transparent;
+    width: 200px;
+    border-radius: 50px;
+    margin: 0 auto;
+    background-color: rgb(199, 60, 60);
+}
+
+.dial-container button {
+    border: none;
+    
+    font-size: 28px;
+    font-weight: bold;
+    padding: 10px;
+    
+    justify-content: center;
+    align-items: center;
+}
+.dial-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-family: 'Atkinson Hyperlegible';
+    border: none;
+    width: 200px;
+    border-radius: 50px;
+    background-color: rgb(199, 60, 60); /* este será diferente para cada dial desde JS */
+}
+
+.dial-container button {
+    border: none;
+    background-color: inherit; /* ✅ hereda el fondo del dial */
+    color: #fff4eb;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.dial-container button:hover {
+    background-color: #fff4eb;          /* ✅ blanco crema al hover */
+    color: inherit;                     /* ✅ vuelve al color original del dial */
+    cursor: pointer;
+}
+
+
+#dial-value {
+    font-size: 28px;
+    width: 40px;
+    text-align: center;
+    color: #fff4eb;
+    font-weight: bold;
+}
+
+
+#añadir:hover{
+    background-color: #634647;
+    color: #fff4eb;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+
+
+
+#quitar:hover {
+    background-color: #634647;
+    color: #fff4eb;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+
+#dials-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* espacio entre diales */
+    margin-top: 30px;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+#añadir, #quitar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    border-radius: 50px;
+    border: 2px solid #634647; 
+    font-family: 'Atkinson Hyperlegible';
+    font-size: 24px;
+    font-weight: bold;
+    color: #634647;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    line-height: 1; /* esto ayuda a alinear verticalmente el signo */
+}
+
+#añadir:hover, #quitar:hover {
+    background-color: #634647;
+    color: #fff4eb;
+    cursor: pointer;
+}
+
+.linkingles{
+    margin-top: 100px;
+    font-family: 'Atkinson Hyperlegible';
+    color: #634647;
+    text-align: end;
+   text-decoration: underline;
+}

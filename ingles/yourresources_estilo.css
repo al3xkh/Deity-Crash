@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0; }
+
+
+
+.navbar {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 1rem 2rem; 
+    position: absolute; 
+    top: 0; 
+    width: 100%; 
+    z-index: 10; 
+    font-family: 'Atkinson Hyperlegible';
+    background-color: #634647;
+    
+}
+
+.body {
+    overflow-x: hidden;
+ 
+    background-color: #fff4eb;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    gap: 2rem; 
+    color: #fff4eb;
+    text-decoration: none;
+  }
+
+
+.logo {
+    width: 20%;
+}
+
+a {
+    text-decoration: none; /* quita el subrayado */
+    color: #fff4eb; /* pone el texto blanco */
+    
+}
+
+.uwu{
+    width: 20%;
+    margin-top: 5%;
+}
+
+
+.logete {
+    display: flex;
+    justify-content: center; /* centra horizontalmente */
+    align-items: center;     /* centra verticalmente */
+    
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #fff4eb;
+    font-size: 1.2rem; /* aumentá el tamaño del texto */
+    transition: color 0.3s ease; /* suave transición de color */
+}
+
+.navbar a:hover {
+    color: #ffcc99; /* color clarito cuando pasás el mouse */
+    cursor: pointer;
+}
+
+.ingles{
+    margin-top: 100px;
+    font-family: 'Atkinson Hyperlegible';
+    color: #634647;
+    text-align: end;
+    margin-right: 30px;
+}
+
+.header{
+    font-family: 'Gentium Book';
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 30px;
+   
+    
+}
+
+.header, .parrafo{
+    text-align: center;
+    color: #634647;
+    
+    
+}
+
+.parrafo{
+    font-family: 'Atkinson Hyperlegible';
+    font-size: 20px;
+    
+}
+
+
+
+
+
+footer{
+    background-color: #634647;
+    font-family: 'Atkinson Hyperlegible';
+    color: #fff4eb;
+    display: block;
+    height: 40px;
+    margin-top: 20px;
+    padding-top: 5px;
+    padding-left: 5px;
+    font-size: 15px;
+}
+
+.parrafo2{
+    font-family: 'Atkinson Hyperlegible';
+    font-size: 17px;
+    text-align: center;
+    color: #634647;
+    padding: 40px;
+    margin-top: 20px;
+}
+
+.qr{
+    display: flex;
+    margin: 0 auto;
+    width: 250px;
+}
+
+.link{
+    color: #634647;
+    text-align:center;
+    display:block;
+    margin-top: 30px;
+    font-size: 17px;
+    font-family: 'Atkinson Hyperlegible';
+    text-decoration: underline;
+}
+
+.linkingles{
+    margin-top: 100px;
+    font-family: 'Atkinson Hyperlegible';
+    color: #634647;
+    text-align: end;
+   text-decoration: underline;
+}
