@@ -41,8 +41,8 @@ ul {
 }
 
 a {
-    text-decoration: none;
-    color: #fff4eb; 
+    text-decoration: none; /* quita el subrayado */
+    color: #fff4eb; /* pone el texto blanco */
     
 }
 
@@ -54,20 +54,20 @@ a {
 
 .logete {
     display: flex;
-    justify-content: center; 
-    align-items: center;
+    justify-content: center; /* centra horizontalmente */
+    align-items: center;     /* centra verticalmente */
     
 }
 
 .navbar a {
     text-decoration: none;
     color: #fff4eb;
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
+    font-size: 1.2rem; /* aumentá el tamaño del texto */
+    transition: color 0.3s ease; /* suave transición de color */
 }
 
 .navbar a:hover {
-    color: #ffcc99;
+    color: #ffcc99; /* color clarito cuando pasás el mouse */
     cursor: pointer;
 }
 
