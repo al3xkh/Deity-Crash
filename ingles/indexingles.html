@@ -1,34 +1,49 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <link href='https://fonts.googleapis.com/css?family=Atkinson Hyperlegible' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Main Page</title>
     <link rel="icon" href="../imagenes/ojo.png" type="image/x-icon">
     <meta charset="utf-8">
     <link rel="stylesheet" href="indexinglesestilo.css"> 
 </head>
-    <body class="body">
-<nav class="navbar">
-    <a href="indexingles.html">
-        <img src="../imagenes/logoblanco.png" alt="Logo" class="logo"></a>
-    <ul class="nav-list">
-        <li><a href="playingles.html">Play!</a></li>
-        <li><a href="yourresources.html">Your resources</a></li>
-    </ul>
-</nav>
-<p class="ingles"> <a href="../index.html" class="españollink"> Spanish version/Versión en español</a></p>
-<div class="logete">
-    <img src="../imagenes/logoentero.png" alt="Logo" class="uwu">
+<body class="body">
+    <nav class="navbar">
+        <a href="indexingles.html">
+            <img src="../imagenes/logoblanco.png" alt="Logo" class="logo">
+        </a>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <ul class="nav-list" id="navList">
+            <li><a href="playingles.html">Play!</a></li>
+            <li><a href="yourresources.html">Your resources</a></li>
+        </ul>
+    </nav>
 
-</div>
+    <p class="ingles">
+        <a href="../index.html" class="españollink">Spanish version/Versión en español</a>
+    </p>
 
+    <div class="logete">
+        <img src="../imagenes/logoentero.png" alt="Logo" class="uwu">
+    </div>
 
-<h1 class="header"> Face mythological gods possessed by spirits! </h1>
-<p class="parrafo"> Deity Crash is an action and strategy game, in which you will have to show your game skills to be victorious. 
-    <BR>Do you dare? start your game here!</p>
-    </body>
+    <h1 class="header">Face mythological gods possessed by spirits!</h1>
+    <p class="parrafo">
+        Deity Crash is an action and strategy game, in which you will have to show your game skills to be victorious. 
+        <br>Do you dare? Start your game here!
+    </p>
 
-    <button class="getstarted"  onclick="window.location.href='playingles.html';">
-        Play!</button>
+    <button class="getstarted" onclick="window.location.href='playingles.html';">
+        Play!
+    </button>
 
+    <script>
+        function toggleMenu() {
+            const navList = document.getElementById('navList');
+            navList.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

@@ -3,20 +3,24 @@
 <html lang="en">
 <head>
     <link href='https://fonts.googleapis.com/css?family=Atkinson Hyperlegible' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Your resources</title>
     <link rel="icon" href="../imagenes/ojo.png" type="image/x-icon">
     <meta charset="utf-8">
     <link rel="stylesheet" href="yourresources_estilo.css"> 
 </head>
-    <body class="body">
-<nav class="navbar">
-    <a href="indexingles.html">
-        <img src="../imagenes/logoblanco.png" alt="Logo" class="logo"></a>
-    <ul class="nav-list">
-        <li><a href="playingles.html">Play!</a></li>
-        <li><a href="yourresources.html">Your resources</a></li>
-    </ul>
-</nav>
+<body class="body">
+    <nav class="navbar">
+        <a href="../index.html">
+            <img src="../imagenes/logoblanco.png" alt="Logo" class="logo">
+        </a>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <ul class="nav-list" id="navList">
+            <li><a href="../juega/juega.html">¡Juega!</a></li>
+            <li><a href="tusrecursos.html">Tus recursos</a></li>
+        </ul>
+    </nav>
 <p class="ingles"> <a class="linkingles" href="../tusrecursos/tusrecursos.html">Spanish version/Versión en español</a></p>
 
 
@@ -28,13 +32,18 @@
     </p>
 
 
-    <p class="parrafo2"> Get all the final card artwork, the instruction manual in digital version and the god compendium, also in digital version, by scanning this QR code or clicking on the link!
+    <p class="parrafo2"> Get all the final card artwork, the instruction manual in digital version and the god compendium, also in digital version clicking on the link!
     </p>
+    <script>
+        function toggleMenu() {
+            const navList = document.getElementById('navList');
+            navList.classList.toggle('active');
+        }
+    </script>
+
     </body>
 
     
-<img src="../imagenes/qr_drive_ingles.png" alt="qrdrive" class="qr">
-
 <a class="link" href="https://drive.google.com/drive/folders/16Hipu4BvtzT3bp8TdUURSMJ1kCNBlREE?usp=drive_link">Link to digital resources</a>
 
       

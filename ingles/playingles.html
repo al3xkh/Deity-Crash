@@ -1,125 +1,137 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <link href='https://fonts.googleapis.com/css?family=Atkinson Hyperlegible' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Play</title>
     <link rel="icon" href="../imagenes/ojo.png" type="image/x-icon">
     <meta charset="utf-8">
     <link rel="stylesheet" href="playingles_estilo.css"> 
 </head>
-    <body class="body">
-<nav class="navbar">
-    <a href="indexingles.html">
-        <img src="../imagenes/logoblanco.png" alt="Logo" class="logo"></a>
-    <ul class="nav-list">
-        <li><a href="playingles.html">Play!</a></li>
-        <li><a href="yourresources.html">Your resources</a></li>
-    </ul>
-</nav>
-<p class="ingles"> <a class="linkingles" href="../juega/juega.html">Spanish version/Versión en español</a></p>
+<body class="body">
 
+    <nav class="navbar">
+        <a href="indexingles.html">
+            <img src="../imagenes/logoblanco.png" alt="Logo" class="logo">
+        </a>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <ul class="nav-list" id="navList">
+            <li><a href="playingles.html">Play!</a></li>
+            <li><a href="yourresources.html">Your resources</a></li>
+        </ul>
+    </nav>
 
+    
+    <p class="ingles">
+        <a class="linkingles" href="../juega/juega.html">Spanish version/Versión en español</a>
+    </p>
 
-<h1 class="header"> Add your dials! </h1>
+ 
+    <h1 class="header">Add your dials!</h1>
 
-<div id="dials-wrapper">
-    <div class="dial-container">
-        <button id="decrease">−</button>
-        <span id="dial-value">30</span>
-        <button id="increase">+</button>
+    <div id="dials-wrapper">
+        <div class="dial-container">
+            <button id="decrease">−</button>
+            <span id="dial-value">30</span>
+            <button id="increase">+</button>
+        </div>
     </div>
-</div>
 
-<div class="buttons-container">
-    <button id="añadir">+</button>
-    <button id="quitar">−</button>
-  </div>
+    <div class="buttons-container">
+        <button id="añadir">+</button>
+        <button id="quitar">−</button>
+    </div>
 
+    <script>
+        const maxDials = 6;
+        let currentDials = 1;
 
+        const dialsWrapper = document.getElementById("dials-wrapper");
+        const añadirBtn = document.getElementById("añadir");
+        const quitarBtn = document.getElementById("quitar");
 
-<script>
-    const maxDials = 6;
-    let currentDials = 1;
+        const dialColors = [
+            "#c73c3c", 
+            "#f89848", 
+            "#f3829b", 
+            "#6375b8", 
+            "#9bd093", 
+            "#ffd38d"  
+        ];
 
-    const dialsWrapper = document.getElementById("dials-wrapper");
-    const añadirBtn = document.getElementById("añadir");
-    const quitarBtn = document.getElementById("quitar");
+        function createDial(index) {
+            const dial = document.createElement("div");
+            dial.className = "dial-container";
+            dial.style.backgroundColor = dialColors[index % dialColors.length];
 
-    const dialColors = [
-        "#c73c3c", // rojo
-        "#f89848", // naranja
-        "#f3829b", // amarillo
-        "#6375b8", // verde
-        "#9bd093", // azul
-        "#ffd38d"  // violeta
-    ];
+            const decrease = document.createElement("button");
+            decrease.textContent = "−";
 
-    function createDial(index) {
-        const dial = document.createElement("div");
-        dial.className = "dial-container";
-        dial.style.backgroundColor = dialColors[index % dialColors.length];
+            const valueDisplay = document.createElement("span");
+            valueDisplay.textContent = index === 0 ? 30 : 20;
 
-        const decrease = document.createElement("button");
-        decrease.textContent = "−";
+            const increase = document.createElement("button");
+            increase.textContent = "+";
 
-        const valueDisplay = document.createElement("span");
-        valueDisplay.textContent = index === 0 ? 30 : 20;
+            let value = index === 0 ? 30 : 20;
+            const max = index === 0 ? 30 : 20;
 
-        const increase = document.createElement("button");
-        increase.textContent = "+";
+            decrease.addEventListener("click", () => {
+                if (value > 0) {
+                    value--;
+                    valueDisplay.textContent = value;
+                }
+            });
 
-        let value = index === 0 ? 30 : 20;
-        const max = index === 0 ? 30 : 20;
+            increase.addEventListener("click", () => {
+                if (value < max) {
+                    value++;
+                    valueDisplay.textContent = value;
+                }
+            });
 
-        decrease.addEventListener("click", () => {
-            if (value > 0) {
-                value--;
-                valueDisplay.textContent = value;
+            dial.appendChild(decrease);
+            dial.appendChild(valueDisplay);
+            dial.appendChild(increase);
+
+            return dial;
+        }
+
+        function renderDials() {
+            dialsWrapper.innerHTML = "";
+            for (let i = 0; i < currentDials; i++) {
+                const dial = createDial(i);
+                dialsWrapper.appendChild(dial);
+            }
+
+            quitarBtn.style.display = currentDials > 1 ? "flex" : "none";
+            añadirBtn.style.display = currentDials < maxDials ? "flex" : "none";
+        }
+
+        añadirBtn.addEventListener("click", () => {
+            if (currentDials < maxDials) {
+                currentDials++;
+                renderDials();
             }
         });
 
-        increase.addEventListener("click", () => {
-            if (value < max) {
-                value++;
-                valueDisplay.textContent = value;
+        quitarBtn.addEventListener("click", () => {
+            if (currentDials > 1) {
+                currentDials--;
+                renderDials();
             }
         });
 
-        dial.appendChild(decrease);
-        dial.appendChild(valueDisplay);
-        dial.appendChild(increase);
+        renderDials();
 
-        return dial;
-    }
-
-    function renderDials() {
-        dialsWrapper.innerHTML = "";
-        for (let i = 0; i < currentDials; i++) {
-            const dial = createDial(i);
-            dialsWrapper.appendChild(dial);
+        function toggleMenu() {
+            const navList = document.getElementById('navList');
+            navList.classList.toggle('active');
         }
+    </script>
+</body>
+</html>
 
-        quitarBtn.style.display = currentDials > 1 ? "flex" : "none";
-        añadirBtn.style.display = currentDials < maxDials ? "flex" : "none";
-    }
-
-    añadirBtn.addEventListener("click", () => {
-        if (currentDials < maxDials) {
-            currentDials++;
-            renderDials();
-        }
-    });
-
-    quitarBtn.addEventListener("click", () => {
-        if (currentDials > 1) {
-            currentDials--;
-            renderDials();
-        }
-    });
-
-    renderDials();
-</script>
 
 
 

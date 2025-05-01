@@ -41,8 +41,8 @@ ul {
 }
 
 a {
-    text-decoration: none; /* quita el subrayado */
-    color: #fff4eb; /* pone el texto blanco */
+    text-decoration: none; 
+    color: #fff4eb; 
     
 }
 
@@ -54,20 +54,20 @@ a {
 
 .logete {
     display: flex;
-    justify-content: center; /* centra horizontalmente */
-    align-items: center;     /* centra verticalmente */
+    justify-content: center; 
+    align-items: center;     
     
 }
 
 .navbar a {
     text-decoration: none;
     color: #fff4eb;
-    font-size: 1.2rem; /* aumentá el tamaño del texto */
-    transition: color 0.3s ease; /* suave transición de color */
+    font-size: 1.2rem; 
+    transition: color 0.3s ease; 
 }
 
 .navbar a:hover {
-    color: #ffcc99; /* color clarito cuando pasás el mouse */
+    color: #ffcc99; 
     cursor: pointer;
 }
 
@@ -139,12 +139,12 @@ a {
     border: none;
     width: 200px;
     border-radius: 50px;
-    background-color: rgb(199, 60, 60); /* este será diferente para cada dial desde JS */
+    background-color: rgb(199, 60, 60); 
 }
 
 .dial-container button {
     border: none;
-    background-color: inherit; /* ✅ hereda el fondo del dial */
+    background-color: inherit; 
     color: #fff4eb;
     font-size: 28px;
     font-weight: bold;
@@ -153,8 +153,8 @@ a {
 }
 
 .dial-container button:hover {
-    background-color: #fff4eb;          /* ✅ blanco crema al hover */
-    color: inherit;                     /* ✅ vuelve al color original del dial */
+    background-color: #fff4eb;          
+    color: inherit;                     
     cursor: pointer;
 }
 
@@ -190,7 +190,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px; /* espacio entre diales */
+    gap: 20px; 
     margin-top: 30px;
 }
 
@@ -216,7 +216,7 @@ a {
     color: #634647;
     background-color: transparent;
     transition: all 0.3s ease;
-    line-height: 1; /* esto ayuda a alinear verticalmente el signo */
+    line-height: 1; 
 }
 
 #añadir:hover, #quitar:hover {
@@ -231,4 +231,45 @@ a {
     color: #634647;
     text-align: end;
    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .body{
+        flex-direction: column;
+    }
+}
+
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    color: #fff4eb;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        background-color: #634647;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 150px;
+        border-radius: 10px;
+        padding: 10px;
+        z-index: 100;
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+
+    .nav-list li {
+        margin: 10px 0;
+    }
+
 }
